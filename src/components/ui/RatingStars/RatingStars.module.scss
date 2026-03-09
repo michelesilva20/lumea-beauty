@@ -1,0 +1,88 @@
+@use '@styles/tokens' as *;
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.stars {
+  display: flex;
+  gap: $space-0-5;
+}
+
+.star {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: default;
+
+  &.interactive {
+    cursor: pointer;
+
+    &:hover svg {
+      transform: scale(1.1);
+    }
+  }
+
+  svg {
+    transition: transform $transition-fast;
+  }
+}
+
+.starBg {
+  fill: $neutral-200;
+}
+
+.starFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: $warning;
+}
+
+.sm {
+  .star svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .value,
+  .count {
+    font-size: $text-xs;
+  }
+}
+
+.md {
+  .star svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .value,
+  .count {
+    font-size: $text-sm;
+  }
+}
+
+.lg {
+  .star svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .value,
+  .count {
+    font-size: $text-base;
+  }
+}
+
+.value {
+  font-weight: $weight-medium;
+  color: $text-primary;
+}
+
+.count {
+  color: $text-muted;
+}

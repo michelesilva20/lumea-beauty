@@ -1,0 +1,355 @@
+@use '@styles/tokens' as *;
+
+.productDetail {
+  padding-bottom: $space-16;
+}
+
+.container {
+  @include container;
+}
+
+.breadcrumb {
+  margin: $space-4 0;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $space-20;
+  text-align: center;
+
+  h1 {
+    @include heading-2;
+    margin-bottom: $space-4;
+  }
+
+  a {
+    color: $rose-quartz-dark;
+    font-weight: $weight-medium;
+  }
+}
+
+.main {
+  display: grid;
+  gap: $space-8;
+  padding: $space-6 0;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: $space-12;
+    padding: $space-10 0;
+  }
+}
+
+// Gallery
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.mainImage {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: $soft-blush;
+  border-radius: $radius-xl;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: $space-4;
+  left: $space-4;
+}
+
+.thumbnails {
+  display: flex;
+  gap: $space-3;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: $radius-md;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:hover,
+  &.active {
+    border-color: $rose-quartz;
+  }
+}
+
+// Info
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.brand {
+  @include overline;
+  color: $text-muted;
+}
+
+.name {
+  @include heading-2;
+  margin: 0;
+  color: $espresso;
+}
+
+.rating {
+  margin: $space-1 0;
+}
+
+.price {
+  padding: $space-4 0;
+  border-top: 1px solid $border-light;
+  border-bottom: 1px solid $border-light;
+}
+
+.shortDescription {
+  @include body-base;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.tag {
+  padding: $space-1 $space-3;
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+  background-color: $soft-blush;
+  border-radius: $radius-full;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-6 0;
+}
+
+.quantityWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  label {
+    @include label;
+    color: $text-primary;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: $space-3;
+}
+
+// Shipping
+.shipping {
+  padding: $space-6;
+  background-color: $ivory-cream;
+  border-radius: $radius-lg;
+
+  h4 {
+    @include heading-5;
+    margin: 0 0 $space-3;
+  }
+
+  a {
+    font-size: $text-sm;
+    color: $text-muted;
+    text-decoration: underline;
+  }
+}
+
+.shippingForm {
+  display: flex;
+  gap: $space-3;
+  margin-bottom: $space-2;
+
+  input {
+    flex: 1;
+    height: 44px;
+    padding: 0 $space-4;
+    font-size: $text-base;
+    border: 1px solid $border-default;
+    border-radius: $radius-md;
+
+    &:focus {
+      outline: none;
+      border-color: $rose-quartz;
+    }
+  }
+}
+
+// Benefits
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-4 0;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-size: $text-sm;
+  color: $text-secondary;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: $success;
+    flex-shrink: 0;
+  }
+}
+
+// Tabs
+.details {
+  padding: $space-10 0;
+  border-top: 1px solid $border-light;
+}
+
+.tabContent {
+  max-width: 800px;
+
+  p {
+    @include body-base;
+    color: $text-secondary;
+  }
+
+  h4 {
+    @include heading-5;
+    margin: $space-6 0 $space-3;
+    color: $espresso;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+
+    li {
+      position: relative;
+      padding-left: $space-6;
+      color: $text-secondary;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        background-color: $rose-quartz;
+        border-radius: $radius-full;
+      }
+    }
+  }
+}
+
+// Reviews
+.reviewsSummary {
+  padding: $space-6;
+  background-color: $ivory-cream;
+  border-radius: $radius-lg;
+  margin-bottom: $space-8;
+}
+
+.reviewsOverall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-2;
+}
+
+.reviewsScore {
+  font-size: $text-5xl;
+  font-weight: $weight-bold;
+  color: $espresso;
+}
+
+.reviewsCount {
+  font-size: $text-sm;
+  color: $text-muted;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  margin-bottom: $space-6;
+}
+
+.reviewItem {
+  padding: $space-6;
+  background-color: $white;
+  border: 1px solid $border-light;
+  border-radius: $radius-lg;
+
+  h5 {
+    @include heading-5;
+    margin: $space-3 0 $space-2;
+    color: $espresso;
+  }
+
+  p {
+    margin: 0 0 $space-3;
+  }
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewDate {
+  font-size: $text-sm;
+  color: $text-muted;
+}
+
+.reviewAuthor {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $success;
+}
+
+// Related
+.related {
+  padding-top: $space-10;
+  border-top: 1px solid $border-light;
+
+  h2 {
+    @include heading-3;
+    margin: 0 0 $space-8;
+    color: $espresso;
+  }
+}

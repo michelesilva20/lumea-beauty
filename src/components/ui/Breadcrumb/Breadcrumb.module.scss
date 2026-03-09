@@ -1,0 +1,50 @@
+@use '@styles/tokens' as *;
+
+.breadcrumb {
+  padding: $space-2 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+}
+
+.link {
+  font-size: $text-sm;
+  color: $text-muted;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $rose-quartz-dark;
+  }
+}
+
+.text {
+  font-size: $text-sm;
+  color: $text-muted;
+}
+
+.current {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $text-primary;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  color: $text-light;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}

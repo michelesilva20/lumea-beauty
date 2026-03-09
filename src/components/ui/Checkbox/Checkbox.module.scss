@@ -1,0 +1,84 @@
+@use '@styles/tokens' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:focus-visible + .checkbox {
+    @include focus-ring;
+  }
+
+  &:checked + .checkbox {
+    background-color: $espresso;
+    border-color: $espresso;
+
+    svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &:disabled + .checkbox {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:disabled ~ .label {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background-color: $white;
+  border: 2px solid $border-default;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $mocha-taupe;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    color: $white;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all $transition-fast;
+  }
+}
+
+.label {
+  font-size: $text-base;
+  color: $text-primary;
+  cursor: pointer;
+  user-select: none;
+}
+
+.error {
+  font-size: $text-sm;
+  color: $error;
+  margin-left: calc(22px + $space-3);
+}

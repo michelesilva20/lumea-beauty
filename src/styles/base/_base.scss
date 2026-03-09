@@ -1,0 +1,146 @@
+// Luméa Beauty - Base Styles
+// Foundation styles for the application
+
+@use '../tokens' as *;
+
+body {
+  font-family: $font-body;
+  font-size: $text-base;
+  font-weight: $weight-regular;
+  line-height: $leading-normal;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+// Headings
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
+
+h3 {
+  @include heading-3;
+}
+
+h4 {
+  @include heading-4;
+}
+
+h5 {
+  @include heading-5;
+}
+
+h6 {
+  @include heading-6;
+}
+
+// Links
+a {
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: var(--color-rose-quartz);
+  }
+}
+
+// Paragraphs
+p {
+  margin-bottom: $space-4;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Strong
+strong,
+b {
+  font-weight: $weight-semibold;
+}
+
+// Emphasis
+em,
+i {
+  font-style: italic;
+}
+
+// Small text
+small {
+  font-size: $text-sm;
+}
+
+// Code
+code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  padding: $space-1 $space-2;
+  background-color: var(--bg-secondary);
+  border-radius: $radius-sm;
+}
+
+// Horizontal rule
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-light);
+  margin: $space-8 0;
+}
+
+// Images
+img {
+  object-fit: cover;
+}
+
+// SR only utility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Container utility
+.container {
+  @include container;
+}
+
+.container-narrow {
+  @include container-narrow;
+}
+
+// Section utility
+.section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+// Text alignment utilities
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

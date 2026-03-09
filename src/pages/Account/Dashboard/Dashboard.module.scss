@@ -1,0 +1,210 @@
+@use '@styles/tokens' as *;
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.header {
+  h1 {
+    @include heading-2;
+    margin: 0 0 $space-2;
+    color: $espresso;
+  }
+
+  p {
+    @include body-base;
+    color: $text-muted;
+    margin: 0;
+  }
+}
+
+.quickLinks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.quickLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-5;
+  background-color: $white;
+  border-radius: $radius-lg;
+  text-align: center;
+  transition: all $transition-fast;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.quickLinkIcon {
+  font-size: $text-2xl;
+}
+
+.section {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $space-6;
+
+  h2 {
+    @include heading-4;
+    margin: 0;
+    color: $espresso;
+  }
+}
+
+.sectionLink {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.orderCard {
+  padding: $space-5;
+  background-color: $ivory-cream;
+  border-radius: $radius-lg;
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $space-4;
+}
+
+.orderId {
+  font-weight: $weight-semibold;
+  color: $espresso;
+}
+
+.orderStatus {
+  padding: $space-1 $space-3;
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  border-radius: $radius-full;
+}
+
+.statusDelivered {
+  background-color: $success-light;
+  color: $success-dark;
+}
+
+.statusShipping {
+  background-color: $info-light;
+  color: $info-dark;
+}
+
+.statusProcessing {
+  background-color: $warning-light;
+  color: $warning-dark;
+}
+
+.orderDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+  margin-bottom: $space-4;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+}
+
+.orderLabel {
+  font-size: $text-xs;
+  color: $text-muted;
+}
+
+.orderTotal {
+  font-weight: $weight-semibold;
+  color: $espresso;
+}
+
+.orderLink {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: $space-8;
+
+  p {
+    @include body-base;
+    color: $text-muted;
+    margin: 0 0 $space-4;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $space-6;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+
+  h3 {
+    @include heading-5;
+    margin: 0 0 $space-4;
+    color: $espresso;
+  }
+
+  p {
+    @include body-base;
+    color: $text-secondary;
+    margin: 0 0 $space-4;
+    line-height: $leading-relaxed;
+  }
+}
+
+.cardLink {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,235 @@
+@use '@styles/tokens' as *;
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: $neutral-100;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  background-color: $espresso;
+  color: $white;
+  transition: width $transition-base;
+  z-index: $z-fixed;
+}
+
+.collapsed .sidebar {
+  width: 72px;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-5;
+  border-bottom: 1px solid rgba($white, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+}
+
+.logoText {
+  font-family: $font-heading;
+  font-size: $text-xl;
+  font-weight: $weight-semibold;
+  color: $white;
+}
+
+.logoAdmin {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $rose-quartz;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  padding: $space-4;
+  overflow-y: auto;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: rgba($white, 0.7);
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+  white-space: nowrap;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: rgba($white, 0.1);
+    color: $white;
+  }
+
+  &.active {
+    background-color: $rose-quartz;
+    color: $espresso;
+  }
+}
+
+.collapsed .navLink {
+  justify-content: center;
+  padding: $space-3;
+
+  span {
+    display: none;
+  }
+}
+
+.sidebarFooter {
+  padding: $space-4;
+  border-top: 1px solid rgba($white, 0.1);
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  width: 100%;
+  padding: $space-3 $space-4;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: rgba($white, 0.7);
+  background: none;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: rgba($white, 0.1);
+    color: $white;
+  }
+}
+
+.collapsed .logoutButton {
+  justify-content: center;
+  padding: $space-3;
+
+  span {
+    display: none;
+  }
+}
+
+.main {
+  flex: 1;
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left $transition-base;
+}
+
+.collapsed .main {
+  margin-left: 72px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-6;
+  padding: $space-4 $space-6;
+  background-color: $white;
+  border-bottom: 1px solid $border-light;
+  z-index: $z-sticky;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  flex: 1;
+  max-width: 480px;
+  padding: $space-3 $space-4;
+  background-color: $neutral-100;
+  border-radius: $radius-lg;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: $text-muted;
+    flex-shrink: 0;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-size: $text-base;
+    color: $text-primary;
+
+    &::placeholder {
+      color: $text-light;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.adminUser {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding-left: $space-4;
+  border-left: 1px solid $border-light;
+
+  span {
+    font-weight: $weight-medium;
+    color: $text-primary;
+  }
+}
+
+.adminAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-weight: $weight-semibold;
+  color: $white;
+  background-color: $espresso;
+  border-radius: $radius-full;
+}
+
+.content {
+  flex: 1;
+  padding: $space-6;
+}

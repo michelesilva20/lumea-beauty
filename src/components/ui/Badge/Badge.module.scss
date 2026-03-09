@@ -1,0 +1,61 @@
+@use '@styles/tokens' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-body;
+  font-weight: $weight-medium;
+  border-radius: $radius-full;
+  white-space: nowrap;
+}
+
+.sm {
+  padding: $space-0-5 $space-2;
+  font-size: $text-xs;
+}
+
+.md {
+  padding: $space-1 $space-3;
+  font-size: $text-sm;
+}
+
+.default {
+  background-color: $neutral-200;
+  color: $text-primary;
+}
+
+.success {
+  background-color: $success-light;
+  color: $success-dark;
+}
+
+.error {
+  background-color: $error-light;
+  color: $error-dark;
+}
+
+.warning {
+  background-color: $warning-light;
+  color: $warning-dark;
+}
+
+.info {
+  background-color: $info-light;
+  color: $info-dark;
+}
+
+.promo {
+  background-color: $promo-rose;
+  color: $white;
+}
+
+.new {
+  background-color: $new-tag;
+  color: $white;
+}
+
+.sale {
+  background-color: $sale-tag;
+  color: $white;
+}

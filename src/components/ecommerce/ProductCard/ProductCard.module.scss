@@ -1,0 +1,136 @@
+@use '@styles/tokens' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+    transform: translateY(-4px);
+
+    .image {
+      transform: scale(1.05);
+    }
+
+    .actions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: $soft-blush;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $transition-slow;
+}
+
+.badges {
+  position: absolute;
+  top: $space-3;
+  left: $space-3;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.actions {
+  position: absolute;
+  top: $space-3;
+  right: $space-3;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity $transition-base, transform $transition-base;
+
+  @include mobile-only {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.outOfStock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($white, 0.85);
+
+  span {
+    padding: $space-2 $space-4;
+    font-size: $text-sm;
+    font-weight: $weight-medium;
+    color: $text-secondary;
+    background-color: $neutral-100;
+    border-radius: $radius-full;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  padding: $space-4;
+}
+
+.brand {
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: $tracking-wide;
+}
+
+.name {
+  @include body-base;
+  font-weight: $weight-medium;
+  color: $text-primary;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $mocha-taupe;
+  }
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  margin-top: $space-2;
+}
+
+.originalPrice {
+  font-size: $text-sm;
+  color: $text-muted;
+  text-decoration: line-through;
+}
+
+.price {
+  font-size: $text-lg;
+  font-weight: $weight-semibold;
+  color: $espresso;
+}
+
+.installments {
+  font-size: $text-xs;
+  color: $text-muted;
+}

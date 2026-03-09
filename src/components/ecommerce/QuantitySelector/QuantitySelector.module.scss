@@ -1,0 +1,87 @@
+@use '@styles/tokens' as *;
+
+.selector {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid $border-default;
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.sm {
+  .button {
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .input {
+    width: 40px;
+    height: 32px;
+    font-size: $text-sm;
+  }
+}
+
+.md {
+  .button {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .input {
+    width: 48px;
+    height: 40px;
+    font-size: $text-base;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $neutral-50;
+  color: $text-primary;
+  border: none;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+
+  &:hover:not(:disabled) {
+    background-color: $neutral-200;
+  }
+
+  &:disabled {
+    color: $text-light;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  width: 48px;
+  height: 40px;
+  text-align: center;
+  font-weight: $weight-medium;
+  color: $text-primary;
+  border: none;
+  border-left: 1px solid $border-light;
+  border-right: 1px solid $border-light;
+  background: $white;
+
+  &:focus {
+    outline: none;
+    background-color: $soft-blush-light;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}

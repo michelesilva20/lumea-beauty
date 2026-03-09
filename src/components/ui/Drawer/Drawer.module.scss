@@ -1,0 +1,133 @@
+@use '@styles/tokens' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($graphite-soft, 0.5);
+  backdrop-filter: blur($blur-sm);
+  z-index: $z-drawer;
+  animation: fadeIn $duration-200 $ease-out;
+}
+
+.drawer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  box-shadow: $shadow-modal;
+  animation-duration: $duration-300;
+  animation-timing-function: $ease-out;
+  animation-fill-mode: forwards;
+}
+
+.left {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 360px;
+  animation-name: slideInLeft;
+}
+
+.right {
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 400px;
+  animation-name: slideInRight;
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 85vh;
+  border-radius: $radius-xl $radius-xl 0 0;
+  animation-name: slideInBottom;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-5 $space-5;
+  border-bottom: 1px solid $border-light;
+}
+
+.title {
+  @include heading-4;
+  margin: 0;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: $text-muted;
+  background: none;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $neutral-100;
+    color: $text-primary;
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.content {
+  flex: 1;
+  padding: $space-5;
+  overflow-y: auto;
+}
+
+.footer {
+  padding: $space-4 $space-5;
+  border-top: 1px solid $border-light;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

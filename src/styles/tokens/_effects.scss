@@ -1,0 +1,157 @@
+// Luméa Beauty - Effects Tokens
+// Shadows, borders, transitions, and visual effects
+
+@use 'colors' as *;
+
+// Border Radius
+$radius-none: 0;
+$radius-sm: 0.25rem;    // 4px
+$radius-md: 0.5rem;     // 8px
+$radius-lg: 0.75rem;    // 12px
+$radius-xl: 1rem;       // 16px
+$radius-2xl: 1.5rem;    // 24px
+$radius-3xl: 2rem;      // 32px
+$radius-full: 9999px;
+
+// Shadows
+$shadow-xs: 0 1px 2px 0 rgba($espresso, 0.05);
+$shadow-sm: 0 1px 3px 0 rgba($espresso, 0.08), 0 1px 2px -1px rgba($espresso, 0.08);
+$shadow-md: 0 4px 6px -1px rgba($espresso, 0.08), 0 2px 4px -2px rgba($espresso, 0.08);
+$shadow-lg: 0 10px 15px -3px rgba($espresso, 0.08), 0 4px 6px -4px rgba($espresso, 0.08);
+$shadow-xl: 0 20px 25px -5px rgba($espresso, 0.1), 0 8px 10px -6px rgba($espresso, 0.1);
+$shadow-2xl: 0 25px 50px -12px rgba($espresso, 0.2);
+$shadow-inner: inset 0 2px 4px 0 rgba($espresso, 0.05);
+
+// Elevated shadows (for cards, modals)
+$shadow-card: 0 2px 8px -2px rgba($espresso, 0.08), 0 4px 16px -4px rgba($espresso, 0.06);
+$shadow-card-hover: 0 8px 24px -4px rgba($espresso, 0.12), 0 4px 12px -2px rgba($espresso, 0.08);
+$shadow-modal: 0 20px 40px -8px rgba($espresso, 0.16), 0 8px 16px -4px rgba($espresso, 0.08);
+$shadow-dropdown: 0 4px 12px -2px rgba($espresso, 0.12), 0 2px 4px -1px rgba($espresso, 0.06);
+
+// Focus ring
+$focus-ring: 0 0 0 3px rgba($rose-quartz, 0.4);
+$focus-ring-error: 0 0 0 3px rgba($error, 0.3);
+
+// Transitions
+$transition-fast: 150ms ease;
+$transition-base: 200ms ease;
+$transition-slow: 300ms ease;
+$transition-slower: 400ms ease;
+
+// Easing functions
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// Animation durations
+$duration-75: 75ms;
+$duration-100: 100ms;
+$duration-150: 150ms;
+$duration-200: 200ms;
+$duration-300: 300ms;
+$duration-500: 500ms;
+$duration-700: 700ms;
+$duration-1000: 1000ms;
+
+// Z-index scale
+$z-base: 0;
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-fixed: 300;
+$z-drawer: 400;
+$z-modal-backdrop: 500;
+$z-modal: 600;
+$z-popover: 700;
+$z-tooltip: 800;
+$z-toast: 900;
+$z-max: 9999;
+
+// Opacity
+$opacity-0: 0;
+$opacity-5: 0.05;
+$opacity-10: 0.1;
+$opacity-20: 0.2;
+$opacity-25: 0.25;
+$opacity-30: 0.3;
+$opacity-40: 0.4;
+$opacity-50: 0.5;
+$opacity-60: 0.6;
+$opacity-70: 0.7;
+$opacity-75: 0.75;
+$opacity-80: 0.8;
+$opacity-90: 0.9;
+$opacity-95: 0.95;
+$opacity-100: 1;
+
+// Blur
+$blur-sm: 4px;
+$blur-md: 8px;
+$blur-lg: 16px;
+$blur-xl: 24px;
+$blur-2xl: 40px;
+
+// Backdrop blur
+$backdrop-blur: blur($blur-lg);
+
+// Transition mixins
+@mixin transition-all {
+  transition: all $transition-base;
+}
+
+@mixin transition-colors {
+  transition: color $transition-base, background-color $transition-base, border-color $transition-base;
+}
+
+@mixin transition-transform {
+  transition: transform $transition-base;
+}
+
+@mixin transition-opacity {
+  transition: opacity $transition-base;
+}
+
+@mixin transition-shadow {
+  transition: box-shadow $transition-base;
+}
+
+// Focus state mixin
+@mixin focus-ring {
+  outline: none;
+  box-shadow: $focus-ring;
+}
+
+// Hover elevation mixin
+@mixin hover-lift {
+  transition: transform $transition-base, box-shadow $transition-base;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+// CSS Custom Properties
+:root {
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-full: #{$radius-full};
+  
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-card: #{$shadow-card};
+  --shadow-modal: #{$shadow-modal};
+  
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+  
+  --z-dropdown: #{$z-dropdown};
+  --z-sticky: #{$z-sticky};
+  --z-drawer: #{$z-drawer};
+  --z-modal: #{$z-modal};
+  --z-toast: #{$z-toast};
+}

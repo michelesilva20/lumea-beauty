@@ -1,0 +1,162 @@
+@use '@styles/tokens' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  font-family: $font-body;
+  font-weight: $weight-medium;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-base;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 2px solid transparent;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+// Sizes
+.sm {
+  height: 36px;
+  padding: 0 $space-4;
+  font-size: $text-sm;
+}
+
+.md {
+  height: 44px;
+  padding: 0 $space-6;
+  font-size: $text-base;
+}
+
+.lg {
+  height: 52px;
+  padding: 0 $space-8;
+  font-size: $text-lg;
+}
+
+// Variants
+.primary {
+  background-color: $espresso;
+  color: $white;
+  border-color: $espresso;
+
+  &:hover:not(:disabled) {
+    background-color: $graphite-soft;
+    border-color: $graphite-soft;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.secondary {
+  background-color: $rose-quartz;
+  color: $espresso;
+  border-color: $rose-quartz;
+
+  &:hover:not(:disabled) {
+    background-color: $rose-quartz-dark;
+    border-color: $rose-quartz-dark;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: $espresso;
+  border-color: $espresso;
+
+  &:hover:not(:disabled) {
+    background-color: $espresso;
+    color: $white;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: $text-primary;
+  border-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: $soft-blush;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $rose-quartz-light;
+  }
+}
+
+.link {
+  background-color: transparent;
+  color: $mocha-taupe;
+  border-color: transparent;
+  padding: 0;
+  height: auto;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover:not(:disabled) {
+    color: $espresso;
+  }
+}
+
+// States
+.fullWidth {
+  width: 100%;
+}
+
+.loading {
+  position: relative;
+  color: transparent;
+
+  .label {
+    opacity: 0;
+  }
+}
+
+// Elements
+.spinner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: currentColor;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}

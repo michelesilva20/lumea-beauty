@@ -1,0 +1,57 @@
+@use '@styles/tokens' as *;
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.sm {
+  .price {
+    font-size: $text-lg;
+  }
+}
+
+.md {
+  .price {
+    font-size: $text-2xl;
+  }
+}
+
+.lg {
+  .price {
+    font-size: $text-3xl;
+  }
+}
+
+.originalWrapper {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.originalPrice {
+  font-size: $text-sm;
+  color: $text-muted;
+  text-decoration: line-through;
+}
+
+.discount {
+  display: inline-flex;
+  padding: $space-0-5 $space-2;
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  color: $white;
+  background-color: $sale-tag;
+  border-radius: $radius-sm;
+}
+
+.price {
+  font-weight: $weight-semibold;
+  color: $espresso;
+}
+
+.installments {
+  font-size: $text-sm;
+  color: $text-muted;
+}

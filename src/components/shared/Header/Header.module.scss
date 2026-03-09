@@ -1,0 +1,292 @@
+@use '@styles/tokens' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  background-color: $white;
+}
+
+.topBar {
+  background-color: $espresso;
+  color: $white;
+  padding: $space-2 0;
+  font-size: $text-xs;
+  text-align: center;
+
+  @include tablet {
+    font-size: $text-sm;
+  }
+}
+
+.container {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainHeader {
+  border-bottom: 1px solid $border-light;
+  padding: $space-3 0;
+
+  @include tablet {
+    padding: $space-4 0;
+  }
+
+  .container {
+    justify-content: space-between;
+    gap: $space-4;
+  }
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: $text-primary;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include tablet {
+    display: none;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: $space-1;
+  text-decoration: none;
+}
+
+.logoText {
+  font-family: $font-heading;
+  font-size: $text-xl;
+  font-weight: $weight-semibold;
+  color: $espresso;
+  letter-spacing: $tracking-tight;
+
+  @include tablet {
+    font-size: $text-2xl;
+  }
+}
+
+.logoAccent {
+  font-family: $font-heading;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $rose-quartz-dark;
+  letter-spacing: $tracking-wide;
+
+  @include tablet {
+    font-size: $text-base;
+  }
+}
+
+.nav {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+  }
+
+  @include desktop {
+    gap: $space-2;
+  }
+}
+
+.navLink {
+  padding: $space-2 $space-3;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $text-secondary;
+  text-decoration: none;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  @include desktop {
+    padding: $space-2 $space-4;
+    font-size: $text-base;
+  }
+
+  &:hover {
+    color: $text-primary;
+    background-color: $soft-blush;
+  }
+
+  &.active {
+    color: $espresso;
+    background-color: $soft-blush;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+
+  @include tablet {
+    gap: $space-2;
+  }
+}
+
+.iconLink {
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: $text-secondary;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    background-color: $soft-blush;
+    color: $text-primary;
+  }
+}
+
+.cartLink {
+  position: relative;
+  display: flex;
+}
+
+.cartBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 $space-1;
+  font-size: 10px;
+  font-weight: $weight-semibold;
+  color: $white;
+  background-color: $rose-quartz-dark;
+  border-radius: $radius-full;
+}
+
+.searchBar {
+  border-bottom: 1px solid $border-light;
+  padding: $space-4 0;
+  background-color: $ivory-cream;
+  animation: slideDown $duration-200 $ease-out;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $space-3 $space-4;
+  background-color: $white;
+  border-radius: $radius-lg;
+  border: 1px solid $border-default;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: $text-muted;
+    flex-shrink: 0;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  font-size: $text-base;
+  color: $text-primary;
+  border: none;
+  background: none;
+
+  &::placeholder {
+    color: $text-light;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.searchClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-1;
+  color: $text-muted;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLink {
+  padding: $space-4 $space-2;
+  font-size: $text-lg;
+  font-weight: $weight-medium;
+  color: $text-primary;
+  text-decoration: none;
+  border-bottom: 1px solid $border-light;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $soft-blush;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid $border-default;
+  margin: $space-2 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

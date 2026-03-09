@@ -1,0 +1,40 @@
+@use '@styles/tokens' as *;
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $space-12 $space-6;
+  text-align: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: $space-6;
+  background-color: $soft-blush;
+  border-radius: $radius-full;
+  color: $rose-quartz-dark;
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.title {
+  @include heading-4;
+  margin-bottom: $space-2;
+  color: $text-primary;
+}
+
+.description {
+  @include body-base;
+  color: $text-muted;
+  margin-bottom: $space-6;
+  max-width: 360px;
+}

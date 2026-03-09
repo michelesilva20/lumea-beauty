@@ -1,0 +1,122 @@
+@use '@styles/tokens' as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: $space-8 0 $space-16;
+  background-color: $ivory-cream;
+}
+
+.container {
+  @include container;
+  display: grid;
+  gap: $space-8;
+
+  @include desktop {
+    grid-template-columns: 280px 1fr;
+    gap: $space-10;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+  height: fit-content;
+
+  @include desktop {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  padding-bottom: $space-6;
+  border-bottom: 1px solid $border-light;
+}
+
+.userName {
+  @include heading-5;
+  margin: 0;
+  color: $espresso;
+}
+
+.userEmail {
+  @include body-small;
+  color: $text-muted;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $text-secondary;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: $soft-blush;
+    color: $text-primary;
+  }
+
+  &.active {
+    background-color: $soft-blush;
+    color: $espresso;
+  }
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  margin-top: $space-4;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $error;
+  background: none;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: $error-light;
+  }
+}
+
+.content {
+  min-height: 400px;
+}

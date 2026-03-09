@@ -1,0 +1,523 @@
+@use '@styles/tokens' as *;
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  padding: $space-12 0;
+
+  @include tablet {
+    padding: $space-16 0;
+  }
+
+  @include desktop {
+    padding: $space-20 0;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  margin-bottom: $space-8;
+  text-align: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+    margin-bottom: $space-10;
+  }
+}
+
+.sectionTitle {
+  @include heading-2;
+  margin: 0;
+  color: $espresso;
+}
+
+.sectionDescription {
+  @include body-base;
+  color: $text-muted;
+  margin: 0;
+  max-width: 500px;
+}
+
+.sectionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $espresso;
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: transform $transition-fast;
+  }
+}
+
+// Hero
+.hero {
+  background: linear-gradient(135deg, $soft-blush 0%, $ivory-cream 100%);
+  padding: $space-10 0;
+  overflow: hidden;
+
+  @include tablet {
+    padding: $space-16 0;
+  }
+}
+
+.heroContainer {
+  @include container;
+  display: grid;
+  gap: $space-10;
+  align-items: center;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: $space-12;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  text-align: center;
+
+  @include tablet {
+    text-align: left;
+  }
+}
+
+.heroTitle {
+  @include heading-1;
+  color: $espresso;
+  margin: 0;
+}
+
+.heroAccent {
+  color: $rose-quartz-dark;
+}
+
+.heroDescription {
+  @include body-large;
+  color: $text-secondary;
+  margin: 0;
+  max-width: 480px;
+
+  @include tablet {
+    margin: 0;
+  }
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  @include mobile {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+}
+
+.heroImage {
+  position: relative;
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: $radius-2xl;
+    box-shadow: $shadow-2xl;
+  }
+}
+
+.heroFloat {
+  position: absolute;
+  bottom: $space-6;
+  left: -$space-4;
+
+  @include tablet {
+    left: -$space-8;
+    bottom: $space-10;
+  }
+}
+
+.floatCard {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-4;
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+
+  .floatIcon {
+    font-size: $text-2xl;
+  }
+
+  strong {
+    display: block;
+    font-size: $text-lg;
+    font-weight: $weight-semibold;
+    color: $espresso;
+  }
+
+  span {
+    font-size: $text-sm;
+    color: $text-muted;
+  }
+}
+
+// Benefits
+.benefits {
+  padding: $space-6 0;
+  background-color: $white;
+  border-bottom: 1px solid $border-light;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-6;
+  }
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    color: $rose-quartz-dark;
+    flex-shrink: 0;
+  }
+
+  strong {
+    display: block;
+    font-size: $text-sm;
+    font-weight: $weight-semibold;
+    color: $text-primary;
+  }
+
+  span {
+    font-size: $text-xs;
+    color: $text-muted;
+  }
+}
+
+// Categories
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-6;
+  }
+}
+
+// Products
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-6;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Editorial
+.editorial {
+  background-color: $ivory-cream;
+  padding: $space-12 0;
+
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.editorialContainer {
+  @include container;
+  display: grid;
+  gap: $space-10;
+  align-items: center;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+}
+
+.editorialImage {
+  @include tablet {
+    height: 100%;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $radius-xl;
+
+    @include tablet {
+      border-radius: 0;
+      min-height: 600px;
+    }
+  }
+}
+
+.editorialContent {
+  padding: 0;
+
+  @include tablet {
+    padding: $space-16;
+    max-width: 520px;
+  }
+}
+
+.editorialLabel {
+  @include overline;
+  color: $rose-quartz-dark;
+  margin-bottom: $space-3;
+  display: block;
+}
+
+.editorialTitle {
+  @include heading-2;
+  color: $espresso;
+  margin: 0 0 $space-4;
+}
+
+.editorialText {
+  @include body-base;
+  color: $text-secondary;
+  margin: 0 0 $space-6;
+}
+
+.editorialList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-bottom: $space-8;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    font-size: $text-base;
+    color: $text-primary;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: $success;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// Routine
+.routine {
+  padding: $space-12 0;
+  background-color: $soft-blush;
+
+  @include tablet {
+    padding: $space-16 0;
+  }
+}
+
+.routineGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.routineStep {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+
+  h3 {
+    @include heading-4;
+    margin: $space-3 0 $space-2;
+    color: $espresso;
+  }
+
+  p {
+    @include body-small;
+    color: $text-secondary;
+    margin: 0 0 $space-4;
+  }
+
+  a {
+    font-size: $text-sm;
+    font-weight: $weight-medium;
+    color: $rose-quartz-dark;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.routineNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-family: $font-heading;
+  font-size: $text-xl;
+  font-weight: $weight-semibold;
+  color: $rose-quartz-dark;
+  background-color: $soft-blush;
+  border-radius: $radius-full;
+}
+
+// Reviews
+.reviews {
+  padding: $space-12 0;
+  background-color: $white;
+
+  @include tablet {
+    padding: $space-16 0;
+  }
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.reviewCard {
+  padding: $space-6;
+  background-color: $ivory-cream;
+  border-radius: $radius-xl;
+}
+
+.reviewStars {
+  font-size: $text-lg;
+  color: $warning;
+  margin-bottom: $space-4;
+}
+
+.reviewText {
+  @include body-base;
+  color: $text-secondary;
+  font-style: italic;
+  margin: 0 0 $space-4;
+}
+
+.reviewAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: $space-0-5;
+}
+
+.reviewName {
+  font-weight: $weight-semibold;
+  color: $text-primary;
+}
+
+.reviewProduct {
+  font-size: $text-sm;
+  color: $text-muted;
+}
+
+// Instagram
+.instagram {
+  padding: $space-12 0;
+  background-color: $ivory-cream;
+
+  @include tablet {
+    padding: $space-16 0;
+  }
+}
+
+.instagramGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-2;
+
+  @include tablet {
+    grid-template-columns: repeat(6, 1fr);
+    gap: $space-3;
+  }
+}
+
+.instagramItem {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: $radius-md;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+}

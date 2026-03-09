@@ -1,0 +1,217 @@
+@use '@styles/tokens' as *;
+
+.footer {
+  background-color: $ivory-cream;
+}
+
+.container {
+  @include container;
+}
+
+.newsletter {
+  padding: $space-12 0;
+  background-color: $soft-blush;
+
+  @include tablet {
+    padding: $space-16 0;
+  }
+}
+
+.newsletterContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-6;
+  text-align: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.newsletterText {
+  max-width: 400px;
+}
+
+.newsletterTitle {
+  @include heading-3;
+  margin-bottom: $space-2;
+  color: $espresso;
+}
+
+.newsletterDescription {
+  @include body-base;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  width: 100%;
+  max-width: 400px;
+
+  @include mobile {
+    flex-direction: row;
+  }
+}
+
+.newsletterInput {
+  flex: 1;
+}
+
+.main {
+  padding: $space-12 0;
+
+  @include tablet {
+    padding: $space-16 0;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $space-10;
+
+  @include tablet {
+    grid-template-columns: 1fr 2fr;
+    gap: $space-16;
+  }
+}
+
+.brand {
+  max-width: 320px;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: $space-1;
+  text-decoration: none;
+  margin-bottom: $space-4;
+}
+
+.logoText {
+  font-family: $font-heading;
+  font-size: $text-2xl;
+  font-weight: $weight-semibold;
+  color: $espresso;
+  letter-spacing: $tracking-tight;
+}
+
+.logoAccent {
+  font-family: $font-heading;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $rose-quartz-dark;
+}
+
+.brandDescription {
+  @include body-small;
+  color: $text-secondary;
+  margin-bottom: $space-6;
+}
+
+.social {
+  display: flex;
+  gap: $space-3;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: $text-secondary;
+  background-color: $white;
+  border-radius: $radius-full;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $white;
+    background-color: $espresso;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-8;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.linkTitle {
+  @include heading-6;
+  color: $espresso;
+  margin: 0;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.link {
+  @include body-small;
+  color: $text-secondary;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $rose-quartz-dark;
+  }
+}
+
+.bottom {
+  padding: $space-6 0;
+  border-top: 1px solid $border-light;
+}
+
+.bottomContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-3;
+  text-align: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  @include body-small;
+  color: $text-muted;
+  margin: 0;
+}
+
+.legal {
+  @include body-small;
+}
+
+.legalLink {
+  color: $text-muted;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $text-primary;
+  }
+}

@@ -1,0 +1,97 @@
+@use '@styles/tokens' as *;
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+  border: 1.5px solid transparent;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.sm {
+  width: 32px;
+  height: 32px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.md {
+  width: 40px;
+  height: 40px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.lg {
+  width: 48px;
+  height: 48px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.default {
+  background-color: $neutral-100;
+  color: $text-primary;
+
+  &:hover:not(:disabled) {
+    background-color: $neutral-200;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $neutral-300;
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: $text-secondary;
+
+  &:hover:not(:disabled) {
+    background-color: $soft-blush;
+    color: $text-primary;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $rose-quartz-light;
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: $text-primary;
+  border-color: $border-default;
+
+  &:hover:not(:disabled) {
+    border-color: $text-primary;
+    background-color: $neutral-50;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $neutral-100;
+  }
+}

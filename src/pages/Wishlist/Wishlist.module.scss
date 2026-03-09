@@ -1,0 +1,56 @@
+@use '@styles/tokens' as *;
+
+.wishlist {
+  padding: $space-6 0 $space-16;
+}
+
+.container {
+  @include container;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  margin-bottom: $space-8;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.title {
+  @include heading-2;
+  margin: 0;
+  color: $espresso;
+}
+
+.count {
+  @include body-base;
+  color: $text-muted;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+  margin-top: $space-10;
+  padding-top: $space-10;
+  border-top: 1px solid $border-light;
+}
+
+.continueLink {
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $espresso;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,335 @@
+@use '@styles/tokens' as *;
+
+.cart {
+  padding: $space-6 0 $space-16;
+}
+
+.container {
+  @include container;
+}
+
+.title {
+  @include heading-2;
+  margin: 0 0 $space-8;
+  color: $espresso;
+}
+
+.content {
+  display: grid;
+  gap: $space-8;
+
+  @include desktop {
+    grid-template-columns: 1fr 380px;
+    gap: $space-10;
+  }
+}
+
+// Items
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: $space-4;
+  padding: $space-4;
+  background-color: $white;
+  border: 1px solid $border-light;
+  border-radius: $radius-lg;
+
+  @include tablet {
+    grid-template-columns: 120px 1fr auto auto;
+    align-items: center;
+    gap: $space-6;
+    padding: $space-5;
+  }
+}
+
+.itemImage {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: $radius-md;
+  background-color: $soft-blush;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-base;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.itemBrand {
+  @include overline;
+  color: $text-muted;
+}
+
+.itemName {
+  @include body-base;
+  font-weight: $weight-medium;
+  color: $text-primary;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  &:hover {
+    color: $mocha-taupe;
+  }
+}
+
+.itemPricing {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  margin-top: $space-1;
+}
+
+.itemOriginalPrice {
+  font-size: $text-sm;
+  color: $text-muted;
+  text-decoration: line-through;
+}
+
+.itemPrice {
+  font-size: $text-lg;
+  font-weight: $weight-semibold;
+  color: $espresso;
+}
+
+.itemActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-3;
+  grid-column: 1 / -1;
+
+  @include tablet {
+    grid-column: auto;
+    align-items: center;
+  }
+}
+
+.removeButton {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+  padding: $space-1 0;
+  font-size: $text-sm;
+  color: $text-muted;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color $transition-fast;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    color: $error;
+  }
+}
+
+.itemTotal {
+  display: none;
+  font-size: $text-lg;
+  font-weight: $weight-semibold;
+  color: $espresso;
+  text-align: right;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+// Coupon
+.couponSection {
+  padding: $space-6;
+  background-color: $ivory-cream;
+  border-radius: $radius-lg;
+  margin-top: $space-4;
+
+  h3 {
+    @include heading-5;
+    margin: 0 0 $space-4;
+    color: $espresso;
+  }
+}
+
+.couponForm {
+  display: flex;
+  gap: $space-3;
+}
+
+.couponApplied {
+  margin: $space-3 0 0;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $success;
+}
+
+.couponHint {
+  margin: $space-2 0 0;
+  font-size: $text-xs;
+  color: $text-muted;
+}
+
+// Summary
+.summary {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  padding: $space-6;
+  background-color: $ivory-cream;
+  border-radius: $radius-xl;
+
+  h2 {
+    @include heading-4;
+    margin: 0 0 $space-6;
+    color: $espresso;
+  }
+}
+
+.summaryLines {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding-bottom: $space-6;
+  border-bottom: 1px solid $border-light;
+}
+
+.summaryLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $text-base;
+  color: $text-secondary;
+
+  &.discount {
+    color: $success;
+  }
+
+  .free {
+    color: $success;
+    font-weight: $weight-medium;
+  }
+}
+
+.freeShippingHint {
+  font-size: $text-sm;
+  color: $warning-dark;
+  margin: $space-2 0 0;
+  padding: $space-2 $space-3;
+  background-color: $warning-light;
+  border-radius: $radius-sm;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: $space-6 0;
+
+  span:first-child {
+    font-size: $text-lg;
+    font-weight: $weight-medium;
+    color: $text-primary;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: $space-1;
+  }
+}
+
+.totalValue {
+  font-size: $text-2xl;
+  font-weight: $weight-bold;
+  color: $espresso;
+}
+
+.installments {
+  font-size: $text-sm;
+  color: $text-muted;
+}
+
+.continueLink {
+  display: block;
+  margin-top: $space-4;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+  text-align: center;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $espresso;
+    text-decoration: underline;
+  }
+}
+
+.guarantees {
+  display: flex;
+  justify-content: center;
+  gap: $space-6;
+  margin-top: $space-6;
+  padding-top: $space-6;
+  border-top: 1px solid $border-light;
+}
+
+.guarantee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-2;
+  font-size: $text-xs;
+  color: $text-muted;
+  text-align: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: $success;
+  }
+}
+
+// Recommendations
+.recommendations {
+  margin-top: $space-16;
+  padding-top: $space-10;
+  border-top: 1px solid $border-light;
+
+  h2 {
+    @include heading-3;
+    margin: 0 0 $space-8;
+    color: $espresso;
+  }
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-6;
+  }
+}
