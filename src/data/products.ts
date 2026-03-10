@@ -139,7 +139,7 @@ export const products: Product[] = [
     categorySlug: 'skincare',
     price: 219.90,
     images: [
-      'https://images.unsplash.com/photo-1570194065650-d99fb4b38b15?w=600',
+      'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600',
     ],
     rating: 4.9,
     reviewCount: 98,

@@ -1,0 +1,41 @@
+@use '@styles/tokens' as *;
+
+.page {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+}
+
+.header {
+  margin-bottom: $space-6;
+}
+
+.title {
+  @include heading-2;
+  margin: 0 0 $space-2;
+  color: $espresso;
+}
+
+.count {
+  @include body-base;
+  margin: 0;
+  color: $text-muted;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-4;
+  margin-top: $space-8;
+}
+
+.continueLink {
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+  text-decoration: underline;
+
+  &:hover {
+    color: $espresso;
+  }
+}

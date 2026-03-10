@@ -1,0 +1,116 @@
+@use '@styles/tokens' as *;
+
+.page {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-4;
+  margin-bottom: $space-6;
+}
+
+.title {
+  @include heading-2;
+  margin: 0;
+  color: $espresso;
+}
+
+.grid {
+  display: grid;
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  padding: $space-5;
+  background-color: $ivory-cream;
+  border-radius: $radius-lg;
+  border: 2px solid transparent;
+
+  &.default {
+    border-color: $mocha-taupe;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin-bottom: $space-3;
+}
+
+.label {
+  font-weight: $weight-semibold;
+  color: $espresso;
+}
+
+.badge {
+  font-size: $text-xs;
+  padding: $space-1 $space-2;
+  background-color: $mocha-taupe;
+  color: $white;
+  border-radius: $radius-md;
+}
+
+.address {
+  @include body-base;
+  color: $text-secondary;
+  margin: 0 0 $space-4;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+}
+
+.link,
+.linkDanger {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.linkDanger {
+  color: $error;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.row {
+  display: grid;
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $space-3;
+  margin-top: $space-4;
+}

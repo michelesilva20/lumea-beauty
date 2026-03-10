@@ -1,0 +1,1 @@
+export { AccountDados } from './Dados';

@@ -1,0 +1,98 @@
+@use '@styles/tokens' as *;
+
+.page {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+}
+
+.title {
+  @include heading-2;
+  margin: 0 0 $space-6;
+  color: $espresso;
+}
+
+.addForm {
+  display: flex;
+  gap: $space-3;
+  margin-bottom: $space-6;
+  max-width: 400px;
+}
+
+.message {
+  @include body-base;
+  color: $success;
+  margin: 0 0 $space-6;
+}
+
+.section {
+  margin-top: $space-8;
+}
+
+.sectionTitle {
+  @include heading-4;
+  margin: 0 0 $space-4;
+  color: $espresso;
+}
+
+.grid {
+  display: grid;
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  padding: $space-5;
+  background-color: $ivory-cream;
+  border-radius: $radius-lg;
+  border-left: 4px solid $mocha-taupe;
+
+  &.used {
+    opacity: 0.7;
+    border-left-color: $text-muted;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-2;
+}
+
+.discount {
+  font-weight: $weight-bold;
+  font-size: $text-xl;
+  color: $mocha-taupe;
+}
+
+.code {
+  font-weight: $weight-medium;
+  font-family: monospace;
+  color: $espresso;
+}
+
+.details {
+  font-size: $text-sm;
+  color: $text-muted;
+  margin: 0 0 $space-4;
+  line-height: 1.5;
+}
+
+.copyBtn {
+  margin-top: $space-2;
+}
+
+.badge {
+  font-size: $text-xs;
+  color: $text-muted;
+}
+
+.empty {
+  @include body-base;
+  color: $text-muted;
+  margin: 0;
+}

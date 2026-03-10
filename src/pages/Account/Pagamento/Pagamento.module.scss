@@ -1,0 +1,119 @@
+@use '@styles/tokens' as *;
+
+.page {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-4;
+  margin-bottom: $space-6;
+}
+
+.title {
+  @include heading-2;
+  margin: 0;
+  color: $espresso;
+}
+
+.grid {
+  display: grid;
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  padding: $space-5;
+  background: linear-gradient(135deg, $espresso 0%, $graphite-soft 100%);
+  border-radius: $radius-lg;
+  color: $white;
+  border: 2px solid transparent;
+
+  &.default {
+    border-color: $mocha-taupe;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $space-6;
+}
+
+.brand {
+  font-weight: $weight-semibold;
+  font-size: $text-lg;
+}
+
+.badge {
+  font-size: $text-xs;
+  padding: $space-1 $space-2;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: $radius-md;
+}
+
+.cardNumber {
+  font-family: monospace;
+  font-size: $text-xl;
+  letter-spacing: 2px;
+  margin: 0 0 $space-2;
+}
+
+.holder {
+  font-size: $text-sm;
+  text-transform: uppercase;
+  margin: 0 0 $space-4;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  gap: $space-4;
+}
+
+.link,
+.linkDanger {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: rgba(255, 255, 255, 0.9);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.linkDanger {
+  color: #ffb3b3;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.row {
+  display: grid;
+  gap: $space-4;
+  grid-template-columns: 1fr 1fr;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $space-3;
+  margin-top: $space-4;
+}

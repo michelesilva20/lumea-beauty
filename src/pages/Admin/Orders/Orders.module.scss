@@ -1,0 +1,102 @@
+@use '@styles/tokens' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.header {
+  h1 {
+    @include heading-2;
+    margin: 0;
+    color: $espresso;
+  }
+
+  p {
+    @include body-base;
+    color: $text-muted;
+    margin: $space-2 0 0;
+  }
+}
+
+.card {
+  background-color: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $space-4 $space-5;
+    text-align: left;
+    border-bottom: 1px solid $border-light;
+  }
+
+  th {
+    font-size: $text-sm;
+    font-weight: $weight-medium;
+    color: $text-muted;
+    background-color: $neutral-50;
+  }
+
+  td {
+    font-size: $text-sm;
+    color: $text-primary;
+  }
+
+  tbody tr:hover {
+    background-color: $neutral-50;
+  }
+}
+
+.orderId {
+  font-weight: $weight-medium;
+  color: $espresso;
+}
+
+.date {
+  color: $text-muted;
+  white-space: nowrap;
+}
+
+.status {
+  display: inline-flex;
+  padding: $space-1 $space-3;
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  border-radius: $radius-full;
+}
+
+.statusPaid {
+  background-color: $warning-light;
+  color: $warning-dark;
+}
+
+.statusShipped {
+  background-color: $info-light;
+  color: $info-dark;
+}
+
+.statusDelivered {
+  background-color: $success-light;
+  color: $success-dark;
+}
+
+.link {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

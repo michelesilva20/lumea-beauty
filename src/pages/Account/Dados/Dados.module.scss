@@ -1,0 +1,33 @@
+@use '@styles/tokens' as *;
+
+.page {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+}
+
+.title {
+  @include heading-2;
+  margin: 0 0 $space-6;
+  color: $espresso;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  max-width: 480px;
+}
+
+.row {
+  display: grid;
+  gap: $space-4;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.actions {
+  margin-top: $space-4;
+}

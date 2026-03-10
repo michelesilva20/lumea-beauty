@@ -1,0 +1,102 @@
+@use '@styles/tokens' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: $space-4;
+
+  h1 {
+    @include heading-2;
+    margin: 0;
+    color: $espresso;
+  }
+
+  p {
+    @include body-base;
+    color: $text-muted;
+    margin: $space-2 0 0;
+  }
+}
+
+.card {
+  background-color: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $space-4 $space-5;
+    text-align: left;
+    border-bottom: 1px solid $border-light;
+  }
+
+  th {
+    font-size: $text-sm;
+    font-weight: $weight-medium;
+    color: $text-muted;
+    background-color: $neutral-50;
+  }
+
+  td {
+    font-size: $text-sm;
+    color: $text-primary;
+  }
+
+  tbody tr:hover {
+    background-color: $neutral-50;
+  }
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.productImage {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: $radius-md;
+}
+
+.badge {
+  padding: $space-1 $space-2;
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  background-color: $neutral-200;
+  border-radius: $radius-sm;
+  color: $text-secondary;
+
+  &.featured {
+    background-color: $rose-quartz-light;
+    color: $mocha-taupe;
+  }
+}
+
+.link {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

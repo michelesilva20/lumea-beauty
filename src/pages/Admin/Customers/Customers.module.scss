@@ -1,0 +1,72 @@
+@use '@styles/tokens' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.header {
+  h1 {
+    @include heading-2;
+    margin: 0;
+    color: $espresso;
+  }
+
+  p {
+    @include body-base;
+    color: $text-muted;
+    margin: $space-2 0 0;
+  }
+}
+
+.card {
+  background-color: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $space-4 $space-5;
+    text-align: left;
+    border-bottom: 1px solid $border-light;
+  }
+
+  th {
+    font-size: $text-sm;
+    font-weight: $weight-medium;
+    color: $text-muted;
+    background-color: $neutral-50;
+  }
+
+  tbody tr:hover {
+    background-color: $neutral-50;
+  }
+}
+
+.customerName {
+  font-weight: $weight-medium;
+  color: $espresso;
+}
+
+.link {
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $mocha-taupe;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

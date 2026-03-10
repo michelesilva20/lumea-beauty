@@ -1,0 +1,43 @@
+@use '@styles/tokens' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.header {
+  h1 {
+    @include heading-2;
+    margin: 0;
+    color: $espresso;
+  }
+
+  p {
+    @include body-base;
+    color: $text-muted;
+    margin: $space-2 0 0;
+  }
+}
+
+.card {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+
+  h2 {
+    @include heading-5;
+    margin: 0 0 $space-6;
+    padding-bottom: $space-4;
+    border-bottom: 1px solid $border-light;
+    color: $espresso;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  max-width: 480px;
+}

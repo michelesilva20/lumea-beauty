@@ -1,0 +1,83 @@
+@use '@styles/tokens' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.header {
+  h1 {
+    @include heading-2;
+    margin: 0;
+    color: $espresso;
+  }
+
+  p {
+    @include body-base;
+    color: $text-muted;
+    margin: $space-2 0 0;
+  }
+}
+
+.card {
+  padding: $space-6;
+  background-color: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: $space-6;
+}
+
+.categoryCard {
+  border: 1px solid $border-light;
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
+.categoryImage {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.categoryInfo {
+  padding: $space-4;
+
+  h3 {
+    @include heading-5;
+    margin: 0 0 $space-1;
+    color: $espresso;
+  }
+
+  span {
+    font-size: $text-sm;
+    color: $text-muted;
+  }
+
+  .actions {
+    margin-top: $space-3;
+    display: flex;
+    gap: $space-2;
+
+    button {
+      font-size: $text-sm;
+      color: $mocha-taupe;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

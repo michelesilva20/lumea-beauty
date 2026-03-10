@@ -1,0 +1,1 @@
+export { AccountPagamento } from './Pagamento';

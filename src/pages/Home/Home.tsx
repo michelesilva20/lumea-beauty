@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button, Badge } from '@components/ui';
-import { ProductCard, CategoryCard } from '@components/ecommerce';
+import { HeroSlider, ProductCard, CategoryCard } from '@components/ecommerce';
 import { products, categories } from '@data/products';
 import styles from './Home.module.scss';
 
@@ -11,42 +11,8 @@ export const Home = () => {
 
   return (
     <div className={styles.home}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroContainer}>
-          <div className={styles.heroContent}>
-            <Badge variant="promo" size="md">Novidades de Março</Badge>
-            <h1 className={styles.heroTitle}>
-              Desperte sua
-              <span className={styles.heroAccent}> luminosidade</span> natural
-            </h1>
-            <p className={styles.heroDescription}>
-              Descubra nossa nova linha de skincare com vitamina C e ácido
-              hialurônico. Resultados visíveis em 14 dias.
-            </p>
-            <div className={styles.heroActions}>
-              <Button size="lg">Explorar Coleção</Button>
-              <Button variant="outline" size="lg">Descobrir Rotina</Button>
-            </div>
-          </div>
-          <div className={styles.heroImage}>
-            <img
-              src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=800"
-              alt="Produtos Luméa Beauty"
-              loading="eager"
-            />
-            <div className={styles.heroFloat}>
-              <div className={styles.floatCard}>
-                <span className={styles.floatIcon}>✨</span>
-                <div>
-                  <strong>+50.000</strong>
-                  <span>Clientes satisfeitas</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Slider */}
+      <HeroSlider />
 
       {/* Benefits Bar */}
       <section className={styles.benefits}>
@@ -347,11 +313,18 @@ export const Home = () => {
             </p>
           </div>
           <div className={styles.instagramGrid}>
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <a key={i} href="#" className={styles.instagramItem}>
+            {[
+              '1620916566398-39f1143ab7be',
+              '1611930022073-b7a4ba5fcccd',
+              '1556228720-195a672e8a03',
+              '1598440947619-2c35fc9aa908',
+              '1522335789203-aabd1fc54bc9',
+              '1522337360788-8b13dee7a37e',
+            ].map((id, i) => (
+              <a key={id} href="#" className={styles.instagramItem}>
                 <img
-                  src={`https://images.unsplash.com/photo-${1570172619644 + i * 1000}-dfd03ed5d881?w=300`}
-                  alt={`Instagram post ${i}`}
+                  src={`https://images.unsplash.com/photo-${id}?w=400`}
+                  alt={`Post ${i + 1} - Luméa Beauty`}
                   loading="lazy"
                 />
               </a>
