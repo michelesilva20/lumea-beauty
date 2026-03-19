@@ -1,136 +1,195 @@
-# Luméa Beauty
+# Luméa Beauty ✨
 
-**E-commerce Premium de Beleza e Skincare**
+> **E-commerce premium de beleza e skincare**  
+> Um projeto completo de loja virtual com identidade sofisticada, experiência elegante e arquitetura frontend moderna.
 
-Um projeto completo de e-commerce moderno, elegante e feminino, desenvolvido com React, TypeScript e SCSS Modules. Ideal para portfólio profissional, demonstrando habilidades em design system, componentização e arquitetura frontend.
+## 🔗 Demo online
+[Acessar demonstração](https://emilabs.cloud/demo/lumea-beauty/)
 
-![Luméa Beauty](https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=1200)
+## 📸 Visão geral
 
-## ✨ Características
+O **Luméa Beauty** é um projeto de e-commerce desenvolvido para simular uma marca premium de beleza e skincare, com foco em uma experiência digital refinada, feminina e moderna.
 
-### Design System Premium
-- Paleta de cores sofisticada (Rose Quartz, Soft Blush, Ivory Cream)
-- Tipografia elegante (Poppins + Onest)
-- Sistema de tokens completo (cores, espaçamentos, sombras, breakpoints)
-- Componentes reutilizáveis e consistentes
+A proposta do projeto foi construir uma loja virtual visualmente marcante, com forte atenção a:
+- identidade de marca
+- design system
+- componentização
+- arquitetura frontend
+- experiência de navegação
+- consistência visual em toda a jornada do usuário
 
-### Páginas Completas
-- **Home** - Hero premium, categorias, best-sellers, editorial, reviews
-- **Catálogo** - Filtros, ordenação, grid responsivo
-- **Produto** - Galeria, variações, avaliações, produtos relacionados
-- **Carrinho** - Resumo, cupom, recomendações
-- **Wishlist** - Lista de favoritos
-- **Login/Cadastro** - Autenticação visual elegante
+O resultado é um protótipo completo que demonstra a construção de uma experiência de compra elegante, com área pública, conta do cliente e painel administrativo.
 
-### Painéis
-- **Painel do Cliente** - Dashboard, pedidos, endereços, dados
-- **Painel Admin** - Dashboard com KPIs, pedidos recentes, estoque
+---
 
-### Características Técnicas
-- Mobile-first responsive design
-- CSS Modules com SCSS
-- TypeScript para type safety
-- Componentização profissional
-- Sem dependência de Tailwind
+## ✨ Principais funcionalidades
 
-## 🚀 Tecnologias
+### Loja pública
+- Home com hero premium e seções editoriais
+- Listagem de produtos por categoria
+- Página de produto com galeria, variações e avaliações
+- Carrinho com resumo da compra
+- Wishlist / lista de favoritos
+- Login e cadastro com interface visual alinhada à marca
 
-- **React 18** - Biblioteca UI
-- **TypeScript** - Tipagem estática
-- **Vite** - Build tool
-- **React Router DOM** - Navegação SPA
-- **SCSS Modules** - Estilos componentizados
-- **CSS Custom Properties** - Tokens dinâmicos
+### Área do cliente
+- Dashboard da conta
+- Visualização de pedidos
+- Gestão de endereços e dados pessoais
 
-## 📁 Estrutura do Projeto
+### Área administrativa
+- Dashboard com indicadores
+- Visualização de pedidos recentes
+- Controle de estoque e visão operacional
 
-```
-src/
-├── assets/           # Imagens, ícones, fontes
-├── components/
-│   ├── ui/           # Componentes base (Button, Input, Modal...)
-│   ├── ecommerce/    # Componentes de e-commerce (ProductCard...)
-│   └── shared/       # Header, Footer
-├── data/             # Dados mock (produtos, categorias)
-├── hooks/            # Custom hooks
-├── layouts/          # Layouts (Public, Account, Admin)
-├── pages/            # Páginas da aplicação
-├── styles/
-│   ├── tokens/       # Design tokens (cores, tipografia...)
-│   └── base/         # Reset e estilos base
-└── utils/            # Funções utilitárias
-```
+---
 
-## 🛠️ Instalação
+## 🧠 Diferenciais do projeto
 
-```bash
-# Clonar repositório
-git clone https://github.com/seu-usuario/lumea-beauty.git
+- Identidade visual sofisticada e coerente com o nicho de beleza
+- Design system com tokens bem definidos
+- Arquitetura frontend organizada e escalável
+- Componentes reutilizáveis
+- Interface responsiva com abordagem mobile-first
+- Separação clara entre experiência pública, conta do cliente e admin
+- Projeto ideal para demonstrar cuidado com UI, branding e produto digital
 
-# Entrar no diretório
-cd lumea-beauty
+---
 
-# Instalar dependências
-npm install
+## 👩‍💻 Meu papel no projeto
 
-# Iniciar servidor de desenvolvimento
-npm run dev
-```
+Neste projeto, fui responsável por:
+- concepção da experiência do produto
+- definição da direção visual da interface
+- estruturação do design system
+- arquitetura frontend
+- componentização da aplicação
+- organização das páginas e layouts
+- construção da experiência de navegação do e-commerce
 
-## 📍 Rotas
+---
 
-### Públicas
-- `/` - Home
-- `/categoria/:slug` - Listagem de produtos
-- `/produto/:slug` - Detalhe do produto
-- `/carrinho` - Carrinho de compras
-- `/favoritos` - Lista de desejos
-- `/login` - Login/Cadastro
+## 🛠️ Stack utilizada
 
-### Área do Cliente
-- `/conta` - Dashboard
-- `/conta/pedidos` - Meus pedidos
+| Tecnologia | Uso |
+|------------|-----|
+| React 18 | Interface da aplicação |
+| TypeScript | Tipagem estática |
+| Vite | Build tool |
+| React Router DOM | Navegação SPA |
+| SCSS Modules | Estilos componentizados |
+| CSS Custom Properties | Tokens dinâmicos |
+| SCSS | Organização visual e escalabilidade dos estilos |
+
+---
+
+## 🛍️ Estrutura da experiência
+
+### Home
+Página inicial com hero premium, categorias, best-sellers, editorial e avaliações.
+
+### Catálogo
+Listagem de produtos com filtros, ordenação e grid responsivo.
+
+### Produto
+Página de detalhe com galeria, seleção de variações, avaliações e produtos relacionados.
+
+### Carrinho
+Resumo da compra, aplicação de cupom e recomendações complementares.
+
+### Favoritos
+Lista de desejos para produtos salvos.
+
+### Login e Cadastro
+Fluxo visual elegante e integrado à identidade da marca.
+
+### Conta do Cliente
+Área com dashboard, pedidos, endereços e dados da conta.
 
 ### Admin
-- `/admin` - Dashboard administrativo
+Painel administrativo com indicadores, pedidos recentes e controle operacional.
 
-## 🎨 Design Tokens
+---
 
-### Cores Principais
-```scss
-$rose-quartz: #D8B7C3;
-$soft-blush: #F4E8EC;
-$ivory-cream: #FAF7F4;
-$warm-sand: #D9C7B8;
-$mocha-taupe: #8A6F63;
-$espresso: #3F312C;
-```
+## 🎨 Design System
+
+### Conceito visual
+O projeto foi pensado para transmitir uma estética:
+- elegante
+- premium
+- feminina
+- leve
+- sofisticada
+
+### Paleta principal
+| Token | Valor |
+|------|-------|
+| Rose Quartz | `#D8B7C3` |
+| Soft Blush | `#F4E8EC` |
+| Ivory Cream | `#FAF7F4` |
+| Warm Sand | `#D9C7B8` |
+| Mocha Taupe | `#8A6F63` |
+| Espresso | `#3F312C` |
 
 ### Tipografia
-- **Títulos**: Poppins (400-700)
-- **Corpo**: Onest (300-600)
+- **Títulos:** Poppins
+- **Corpo:** Onest
 
-## 📱 Responsividade
+### Estrutura visual
+- tokens de cor
+- espaçamentos
+- sombras
+- breakpoints
+- componentes base reutilizáveis
 
-O projeto segue a abordagem mobile-first:
-
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1023px
-- **Desktop**: 1024px - 1439px
-- **Wide**: ≥ 1440px
+---
 
 ## 🧩 Componentes UI
 
 ### Base
-Button, IconButton, Input, Select, Checkbox, Badge, Modal, Drawer, Tabs, Breadcrumb, RatingStars, Skeleton, EmptyState, Avatar
+- Button
+- IconButton
+- Input
+- Select
+- Checkbox
+- Badge
+- Modal
+- Drawer
+- Tabs
+- Breadcrumb
+- RatingStars
+- Skeleton
+- EmptyState
+- Avatar
 
 ### E-commerce
-ProductCard, ProductGrid, CategoryCard, QuantitySelector, PriceBlock
-
-## 📄 Licença
-
-Este projeto é apenas para fins de demonstração e portfólio.
+- ProductCard
+- ProductGrid
+- CategoryCard
+- QuantitySelector
+- PriceBlock
 
 ---
 
-Desenvolvido com ❤️ para demonstrar habilidades em Frontend e Design de Interfaces.
+## 📱 Responsividade
+
+O projeto segue abordagem **mobile-first**, com adaptação para diferentes faixas de tela:
+
+- **Mobile:** abaixo de 768px
+- **Tablet:** 768px até 1023px
+- **Desktop:** 1024px até 1439px
+- **Wide:** 1440px ou mais
+
+---
+
+## 🚀 Como rodar localmente
+
+```bash
+npm install
+npm run dev
+
+experiência de e-commerce
+
+construção de produtos digitais com identidade forte
+
+Desenvolvido com ❤️ por Michele Silva / EmiLabs
