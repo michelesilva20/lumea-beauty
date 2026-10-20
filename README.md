@@ -1,3 +1,30 @@
+# Luméa Beauty
+
+A beauty storefront frontend prototype exploring product discovery, cart interactions and customer/admin visual journeys.
+
+**Status:** frontend prototype. **Stack:** React 18, TypeScript, Vite, React Router and SCSS Modules.
+
+## Scope and boundaries
+
+Storefront, account and admin screens use demonstration behavior. This is not a live store, secure account backend, inventory service or payment integration.
+
+## Explore and run
+
+The [existing demo link](https://emilabs.cloud/demo/lumea-beauty/) is retained from the project documentation; hosting availability and interactive behavior must be checked separately.
+
+```sh
+npm ci
+npm run dev
+```
+
+The existing `build` script performs TypeScript compilation and a Vite build. This editorial update does not establish a successful build, accessibility audit or automated test suite.
+
+## Documentação em português
+
+A apresentação original do projeto continua abaixo, com seus detalhes visuais e de navegação. As funcionalidades descritas referem-se ao protótipo.
+
+---
+
 # Luméa Beauty ✨
 
 > **E-commerce premium de beleza e skincare**  
@@ -187,6 +214,7 @@ O projeto segue abordagem **mobile-first**, com adaptação para diferentes faix
 ```bash
 npm install
 npm run dev
+```
 
 experiência de e-commerce
 
